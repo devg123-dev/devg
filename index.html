@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff0f4">
+  <title>For Nila, With Love ❤️</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap');
+    :root { --pink:#e98da8; --deep:#8e435e; --ink:#543844; --cream:#fff8f6; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:var(--cream); font-family:'DM Sans',sans-serif; overflow-x:hidden; }
+    button { font:inherit; cursor:pointer; }
+    .hero {
+    min-height: 100vh;
+    min-height: 100svh;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 70px 22px;
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            rgba(20, 10, 15, 0.40),
+            rgba(20, 10, 15, 0.55)
+        ),
+        url("photos/redtop.jpeg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+    .hero h1 {
+    color: white;
+    text-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
+}
+.hero-message {
+    color: white !important;
+    font-size: 1.00rem;
+    font-weight: 300;
+    line-height: 1.7;
+    text-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.9),
+        0 0 15px rgba(255, 255, 255, 0.35);
+}
+.hero p {
+    color: white;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero .eyebrow,
+.hero .tiny {
+    color: #ffe5ed;
+}
+
+.hero::before,
+.hero::after {
+    display: none;
+}
+    .hero:before,.hero:after { content:""; position:absolute; width:280px;height:280px;border:1px solid #e9a9bb66;border-radius:50%; }
+    .hero:before { top:-130px;right:-90px; } .hero:after { bottom:-170px;left:-100px;width:380px;height:380px; }
+    .hero-inner { position:relative; z-index:1; max-width:720px; }
+    .eyebrow { letter-spacing:.22em;text-transform:uppercase;font-size:.72rem;color:#a9687f; }
+    h1,h2,.script { font-family:'Playfair Display',serif; }
+    h1 { font-size:clamp(3.2rem,10vw,6.7rem);line-height:1.02;margin:18px 0;color:#8e435e;font-weight:500; }
+    h1 em { font-weight:500; }
+    .hero p { max-width:490px;margin:18px auto 28px;line-height:1.8;color:#805e6a; }
+    .pill { border:0;border-radius:999px;padding:14px 24px;background:#a94f70;color:white;box-shadow:0 10px 25px #a94f7033;transition:.2s; }
+    .pill:hover { transform:translateY(-2px);background:#913d5d; }
+    .tiny { font-size:.82rem;color:#a67c8a;margin-top:16px; }
+    section { padding:82px 20px; }
+    .section-inner { max-width:1000px;margin:auto; }
+    .section-title { text-align:center;margin:0 0 12px;font-size:clamp(2rem,6vw,3.2rem);font-weight:500;color:#8e435e; }
+    .section-sub { text-align:center;max-width:570px;margin:0 auto 36px;line-height:1.7;color:#94727e; }
+    .memories { background:#fffdfc; }
+    .gallery { display:grid;grid-template-columns:repeat(3,1fr);gap:16px; }
+    .photo { background:#f8e8ed;border-radius:18px;overflow:hidden;box-shadow:0 8px 25px #7b405012; }
+    .photo img { display:block;width:100%;height:270px;object-fit:cover; }
+    .photo p { margin:0;padding:13px 14px;font-family:'Playfair Display',serif;font-style:italic;text-align:center;color:#89556a; }
+    .placeholder { height:270px;display:grid;place-items:center;padding:18px;text-align:center;color:#a36d80;background:linear-gradient(140deg,#f9dce5,#fff2f5); }
+    .letter-section { background:linear-gradient(145deg,#f9e8ed,#fff7f4); }
+    .letter {
+    max-width: 700px;
+    margin: auto;
+    background: #fffdfb;
+    padding: clamp(25px, 6vw, 55px);
+    border-radius: 8px 28px 8px 28px;
+    box-shadow: 0 18px 55px #8d53631c;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* Background image */
+.letter::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("photos/flower.jpeg");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Decorative border stays above the image */
+.letter::before {
+    z-index: 2;
+}
+
+/* Letter text stays above the image */
+.letter h2,
+.letter p {
+    position: relative;
+    z-index: 1;
+}
+    .signature { font-family:'Playfair Display',serif;font-style:italic;font-size:1.4rem;color:#984d69; }
+    .surprise { text-align:center;background:#fffdfc; }
+    .surprise-box { max-width:650px;margin:auto;padding:38px 22px;border:1px solid #f0d3dc;border-radius:24px;background:linear-gradient(145deg,#fff8fa,#fff); }
+    #secret { display:none;margin:25px auto 0;max-width:480px;line-height:1.9;color:#89556a;font-family:'Playfair Display',serif;font-size:1.35rem; }
+    #secret.show { display:block;animation:fade .8s ease both; }
+    #secret video { display:block;width:100%;max-width:520px;max-height:65vh;margin:12px auto 0;border-radius:16px;background:#24151b; }
+    .video-note { text-align:center;color:#89556a; }
+    #thinkBtn { position:relative; transition:left .18s ease, top .18s ease; touch-action:manipulation; }
+    #teaseMessage { min-height: 32px;margin: 10px auto 0;color: #a65d78;font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.12rem;}
+    #teaseMessage.show { animation: fade .35s ease both;}
+    @media(max-width:700px) { #thinkBtn { position:relative; } }
+    .valentine { text-align:center;background:linear-gradient(145deg,#f6dce5,#fff1f4); }
+    .valentine h2 { font-size:clamp(2.2rem,7vw,4rem);font-weight:500;color:#8e435e; }
+    .choices { display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:25px; }
+    #answer { min-height:35px;margin-top:22px;color:#8e435e;font-family:'Playfair Display',serif;font-size:1.35rem; }
+    footer { text-align:center;padding:28px 16px;color:#a17b87;background:#fff9f8;font-size:.85rem; }
+    .music { position:fixed;right:16px;bottom:16px;z-index:5;border:1px solid #f0c5d2;background:#fffafc;color:#914b66;border-radius:999px;padding:11px 15px;box-shadow:0 6px 20px #64324720; }
+    .heart { position:fixed;bottom:-30px;z-index:4;pointer-events:none;color:#df83a1;animation:floatUp linear forwards; }
+    @keyframes floatUp { to { transform:translateY(-110vh) rotate(35deg);opacity:0; } }
+    @keyframes fade { from { opacity:0;transform:translateY(10px); } to { opacity:1;transform:translateY(0); } }
+    @media(max-width:700px) { section{padding:65px 17px}.gallery{grid-template-columns:repeat(2,1fr);gap:11px}.photo img,.placeholder{height:190px}.photo p{font-size:.9rem;padding:11px 8px} }
+    @media(max-width:420px) { .gallery{grid-template-columns:1fr 1fr}.photo img,.placeholder{height:155px}.music{right:10px;bottom:10px;font-size:.82rem} }
+  </style>
+</head>
+<body>
+  <audio id="backgroundMusic" loop>
+    <source src="music/chera1.m4a" type="audio/mpeg">
+</audio>
+  <header class="hero" id="home">
+    <div class="hero-inner">
+      <div class="eyebrow">A little something, just for you</div>
+      <h1>Hey, <em>Nila</em> <span aria-hidden="true">♡</span></h1>
+      <p class="hero-message">I made a tiny corner of the internet for my favourite person.Take your time, smile a little, and remember how loved you are.</p>
+      <button class="pill" onclick="document.querySelector('#memories').scrollIntoView()">Open your surprise ♡</button>
+      <div class="tiny">Made with love, just for you</div>
+    </div>
+  </header>
+  <main>
+    <section class="memories" id="memories">
+      <div class="section-inner">
+        <h2 class="section-title">Little moments, big feelings</h2>
+        <p class="section-sub">Some moments become memories. Some people make every ordinary moment feel special. Add your favourite photos here.</p>
+        <div class="gallery">
+          <article class="photo"><img src="photos/hold.jpeg" alt="Our favourite memory"><p>One of my favourite moment</p></article>
+          <article class="photo"><img src="photos/smile.jpeg" alt="Another favourite memory"><p>Your smile, my happy place</p></article>
+          <article class="photo"><img src="photos/temple.jpeg" alt="A cherished memory"><p>A memory I'll keep close</p></article>
+          <article class="photo"><img src="photos/us.jpeg" alt="Us, being us"><p>Us, being us</p></article>
+          <article class="photo"><img src="photos/first.jpeg" alt="My favourite kind of day"><p>My favourite kind of day</p></article>
+          <article class="photo"><img src="photos/scene.jpeg" alt="And many more to come"><p>And many more to come</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="letter-section" id="letter">
+      <div class="section-inner">
+        <h2 class="section-title">A letter for you</h2>
+        <p class="section-sub">A few words that I hope you never forget.</p>
+        <div class="letter">
+          <h2>My dearest Nilababyyy,</h2>
+          <p>Enth parayanam enn enikk ariyilla, pakshe ninne kurich orkkumbol thanne njn happy aanu eppuzhum. Ninte koode samsarikkunnathum, nerittu kaanukayum moments spend cheyyunnathum okke enikk orupad ishtamaanu.</p>
+          <p>Mikkapozhum njan ninne deshyappeduthukayum, pinakkukayum, veruthe vazhakk undakkukayum cheythittund. Pakshe manassil eppuzhum enthokke undayalum ninte chintha mathram aahn enik eppozhum. Ninte oru message polum enikk ethra ishtam aahnu , athippam enneh kaliyaakan aahnelum enthu content aahnelum. Athrem special aanu nee enikk.</p>
+          <p>Ente manassil ippazhum maayathe kidakkunna nee prnja oru vaachakam und : " T-shirt il ippazhum ninte manam 🥹🤍". Ninte kannukalil annu nokki ninnanathum aa thudutha kavilil onnu pidichu valichapozhum oke njn polum ariyaathe ninnod ollah ishtam ingane koodi koodi vannu (thirinju oodiyappozhum 😓) </p>
+          <p> Ninne annu kndapo thodangiya ishtam allah nammude +1 il padikkuna oru penkutti kunjave pole irikkunna oru penkutty nalloru kootukariyayi kazhinjappam thottarunnu athum oru dhivasam polum modakathe nirantharam aayi maariya kore sambhashanangal. </p>
+          <p>Ellaa divasavum perfect aavanam ennilla. Nammal thammil pinakkangalum vazhakkukalum okke undaavum. Pakshe enthokke vannalum ninne manassilakki, ninte koode ninnu, nammade nalla memories okke cherth vech munnot povaan aanu enikk ishtam. Ninne vittu enik evdem povanda nee mathram mathyy enikk 😭</p>
+          <p>Pinne oru kaaryam... nee eppozhum happy aayitt irikkanam ketto. Ninte aa chiri angane thanne venam eppozhum. Ninne chirippikkanum, santhoshippikkanum pattunna oraal aavanam enikk ennum eppozhum.</p>
+          <p>I love you so much, Nilababyyy. ❤️</p>
+          <p class="signature"> Ennum ninte swantham , Gandharvan 👼🏼</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="surprise">
+      <div class="surprise-box">
+        <h2 class="section-title">One more thing...</h2>
+        <p class="section-sub">There's a little message hiding behind this button.</p>
+        <button class="pill" id="surpriseBtn">Tap for a little surprise ✨</button>
+        <div id="secret">
+          <p class="video-note"> Our Precious Kiss ❤️</p>
+          <video id="surpriseVideo" controls playsinline preload="metadata" width="100%" style="100%">
+            <source src="C:\Users\devar\Downloads\nila_love_website\nila_love_website\video\nilababy.mp4" type="video/mp4">
+            Your browser does not support this video.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <section class="valentine">
+      <div class="section-inner">
+        <div class="eyebrow">A question from my heart</div>
+        <h2>Will you be mine forever, Nila?</h2>
+        <p class="section-sub">I want to keep choosing you, making memories with you, and loving you through all the little moments. What do you say? ❤️</p>
+        <div class="choices" id="choices">
+          <button class="pill" id="yesBtn">Yes, forever! 💗</button>
+          <button class="pill" id="thinkBtn" style="background:#fff;color:#984d69;border:1px solid #e7b5c5">No 🙈</button>
+        </div>
+        <div id="answer" aria-live="polite"></div>
+        <div id="teaseMessage" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+
+  <audio id="bgMusic" loop>
+    <source src="music/chera1.m4a" type="audio/mpeg">
+  </audio>
+  <button class="music" id="musicBtn" aria-label="Play background music">♫ Play music</button>
+  <footer>Made with all my heart, for Nila ♡</footer>
+
+  <script>
+    // Replace the sample captions and letter with your own words if you like.
+    const music = document.getElementById('bgMusic');
+    const musicBtn = document.getElementById('musicBtn');
+    musicBtn.addEventListener('click', async () => {
+      if (music.paused) {
+        try { await music.play(); musicBtn.textContent = '♫ Pause music'; }
+        catch { musicBtn.textContent = 'Add your song first ♡'; }
+      } else {
+        music.pause(); musicBtn.textContent = '♫ Play music';
+      }
+    });
+
+    // Floating hearts appear gently in the background.
+    function makeHeart() {
+      const heart = document.createElement('span');
+      heart.className = 'heart';
+      heart.textContent = ['♡','♥','✧'][Math.floor(Math.random() * 3)];
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.fontSize = (14 + Math.random() * 18) + 'px';
+      heart.style.animationDuration = (7 + Math.random() * 6) + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 14000);
+    }
+    setInterval(makeHeart, 850);
+
+
+document.getElementById('surpriseBtn').addEventListener('click', () => {
+
+    const secret = document.getElementById('secret');
+    const video = document.getElementById('surpriseVideo');
+    const button = document.getElementById('surpriseBtn');
+
+    secret.classList.toggle('show');
+
+    if (secret.classList.contains('show')) {
+
+        button.textContent = 'A little more love ♡';
+
+        // Automatically play the video
+        video.currentTime = 0;
+
+        video.play().catch(error => {
+            console.log("Video playback failed:", error);
+        });
+
+    } else {
+
+        button.textContent = 'Tap for a little surprise ✨';
+
+        // Stop and reset the video when hidden
+        video.pause();
+        video.currentTime = 0;
+    }
+
+});
+
+
+    
+document.getElementById('yesBtn').addEventListener('click', () => {
+
+  // Hide the teasing message
+  teaseMessage.style.display = 'none';
+
+  // Show the romantic final message
+  document.getElementById('answer').textContent =
+    'Forever and always, my babyyy. Its means a lot 😘💗';
+
+  // Celebrate with floating hearts
+  for (let i = 0; i < 24; i++) {
+    setTimeout(makeHeart, i * 90);
+  }
+
+});
+
+
+    // The playful "No" button moves away when she tries to tap or hover over it.
+    Button = document.getElementById('thinkBtn');
+
+const noButton = document.getElementById('thinkBtn');
+const choices = document.getElementById('choices');
+
+const teaseMessage = document.getElementById('teaseMessage');
+
+const teasingLines = [
+  "Awww, Chakkareee… that button makes me sad. 🥺",
+  "You're breaking my little heart kurippe ! 💔",
+  "Wrong button, chellom… choose the pink one! 🙈",
+  "I'm getting sad over here… give me a YES? 🥹",
+  "My heart is waiting for your YES thangam! ❤️"
+];
+
+let teaseIndex = 0;
+
+function showTeaseAndMove() {
+
+  // Display a cute sad message
+  teaseMessage.textContent =
+    teasingLines[teaseIndex % teasingLines.length];
+
+  teaseMessage.classList.remove('show');
+  void teaseMessage.offsetWidth;
+  teaseMessage.classList.add('show');
+
+  teaseIndex++;
+
+  // Make the NO button run away
+  const area = choices.getBoundingClientRect();
+
+  const maxX = Math.max(0, Math.min(130, area.width / 2 - 55));
+  const maxY = 65;
+
+  const x = (Math.random() * 2 - 1) * maxX;
+  const y = (Math.random() * 2 - 1) * maxY;
+
+  noButton.style.transform =
+    `translate(${x}px, ${y}px)`;
+}
+
+// When she touches or approaches NO
+noButton.addEventListener('pointerenter', showTeaseAndMove);
+
+noButton.addEventListener('pointerdown', (event) => {
+  event.preventDefault();
+  showTeaseAndMove();
+});
+
+noButton.addEventListener('click', (event) => {
+  event.preventDefault();
+  showTeaseAndMove();
+});
+  </script>
+</body>
+</html>

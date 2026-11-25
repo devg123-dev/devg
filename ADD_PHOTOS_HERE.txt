@@ -1,0 +1,1 @@
+Add your own photos here, then update the six photo placeholders in index.html. Suggested names: memory1.jpg to memory6.jpg.
